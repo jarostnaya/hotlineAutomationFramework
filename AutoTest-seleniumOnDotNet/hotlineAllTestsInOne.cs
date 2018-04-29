@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.PageObjects;
 
@@ -9,15 +10,26 @@ namespace Test
     [TestFixture]
     public class AutomationCore
     {
+        public string baseURL;
+        public string searchURL;
+
+        public static string enterWord;
+
         IWebDriver driver;
 
-        // Our Core Test Automation class
+        // open google
+        // TODO: open hotline via google
+        // private string textToSearch = "Hotline";
+
+
         [OneTimeSetUp]
         public void startTest() // This method will be fired at the start of the test
         {
+            baseURL = "https://hotline.ua/";
+            searchURL = "https://google.com";
             driver = new ChromeDriver();
             driver.Manage().Window.Maximize();
-            driver.Url = "https://hotline.ua/";
+            driver.Navigate().GoToUrl(baseURL);
         }
 
         [OneTimeTearDown]
@@ -29,26 +41,32 @@ namespace Test
         [Test]
         public void allTestsInOne()
         {
+                     
             //check URL
             Assert.IsTrue(driver.Title.Contains("Hotline"));
-       
+
             //change lang
-            driver.FindElement(By.XPath("//*[@data-language=\"uk\"]")).Click();
-            driver.FindElement(By.XPath("//*[@data-language=\"ru\"]")).Click();
+            IWebElement langUA = driver.FindElement(By.XPath("//*[@data-language=\"uk\"]"));
+            langUA.Click();
 
-                //check lang
-                driver.FindElement(By.XPath("//*[@data-language=\"ru\"]")).Click();
+            IWebElement langRU = driver.FindElement(By.XPath("//*[@data-language=\"ru\"]"));
+            langRU.Click();
 
+            //check lang
+            //IWebElement enterWordXPATH = driver.FindElement(By.XPath("//div[@class=\"box-in\"]>span[@class=\"name\")]"));
+            //enterWord = "Кошик";
+            //Assert.AreEqual(enterWord, enterWordXPATH);
 
-
-
-
+                        
             //select electro-guitars 
             driver.FindElement(By.XPath("//a[text()=\"Музыкальные инструменты\"]")).Click();
+            Assert.IsTrue(driver.Title.Contains("\"Музыкальные инструменты\""));
             driver.FindElement(By.XPath("//a[@data-eventlabel=\"Электрогитары\"]")).Click();
+            Assert.IsTrue(driver.Title.Contains("Электрогитары"));
 
             //filter 6-strings guitars
             driver.FindElement(By.XPath("//a[@href=\"/musical_instruments/elektrogitary/30957/\"]")).Click();
+           
 
             //filter by max price=5000
             IWebElement maxPrice = driver.FindElement(By.XPath("//input[@data-price-max=\"\"]"));

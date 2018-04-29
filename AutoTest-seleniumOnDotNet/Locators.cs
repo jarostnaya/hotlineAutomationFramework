@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AutoTest_seleniumOnDotNet.PageObjects
+namespace AutoTest_seleniumOnDotNet
 {
-    class HomePage
+    class Locators
     {
     }
 }

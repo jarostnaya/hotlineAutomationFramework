@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="hotlineAllTestsInOne.cs" />
-    <Compile Include="PageObjects\HomePage.cs" />
+    <Compile Include="Locators.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
