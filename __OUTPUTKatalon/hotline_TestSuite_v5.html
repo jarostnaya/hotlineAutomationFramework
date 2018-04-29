@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>hotline_TestSuite_v4</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">1_OpenWebSite</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://hotline.ua<datalist><option>http://hotline.ua</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">2_ChangeLang</td></tr>
+</thead>
+<tbody>
+<tr><td>click</td><td>//*[@data-language="uk"]<datalist><option>//body[@id='page-index']/header/div/div/div/div/div/div[2]/div/div[3]/div/div/span[2]</option><option>//div[3]/div/div/span[2]</option><option>span:contains('укр')</option><option>span[data-language="uk"]</option><option>//span[data-language="uk"]</option><option>span.js-change-language[@data-language="uk"]</option><option>@data-language="uk"</option><option>//@data-language="uk"</option><option>//data-language="uk"</option><option>/span[data-language=uk]</option><option>/span[@data-language='uk']</option><option>//*[@*="uk"]</option><option>//*[@data-language="uk"]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//*[@data-language="ru"]<datalist><option>//*[@data-language="uk"]</option><option>//body[@id='page-index']/header/div/div/div/div/div/div[2]/div/div[3]/div/div/span[2]</option><option>//div[3]/div/div/span[2]</option><option>span:contains('укр')</option><option>span[data-language="uk"]</option><option>//span[data-language="uk"]</option><option>span.js-change-language[@data-language="uk"]</option><option>@data-language="uk"</option><option>//@data-language="uk"</option><option>//data-language="uk"</option><option>/span[data-language=uk]</option><option>/span[@data-language='uk']</option><option>//*[@*="uk"]</option><option>//*[@data-language="ru"]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">3_SelectCategory_guitars</td></tr>
+</thead>
+<tbody>
+<tr><td>click</td><td>//img[@alt='Электрогитары']<datalist><option>//img[@alt='Электрогитары']</option><option>//body[@id='page-index']/div/div/div[2]/aside/nav/ul/li[11]/div/ul/li/div/ul/li[2]/a/img</option><option>//li[11]/div/ul/li/div/ul/li[2]/a/img</option><option>css=img[alt="Электрогитары"]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">4_FilterGuitarsByStrings</td></tr>
+</thead>
+<tbody>
+<tr><td>click</td><td>//a[@href="/musical_instruments/elektrogitary/30957/"]<datalist><option>//a[@href="/musical_instruments/elektrogitary/30957/"]&gt;span</option><option>//a[@href="/musical_instruments/elektrogitary/30957/"]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">5_FilterGuitarsByMaxPrice</td></tr>
+</thead>
+<tbody>
+<tr><td>doubleClick</td><td>xpath=//input[@data-price-max=""]<datalist><option>xpath=//input[@data-price-max=""]</option><option>//input[@value='138267']</option><option>//body[@id='page-catalog']/div/div/div/aside/div/div[3]/div/div[6]/div[2]/div/div/input[3]</option><option>//input[3]</option></datalist></td><td></td>
+</tr>
+<tr><td>setText</td><td>xpath=//input[@data-price-max=""]<datalist><option>xpath=//input[@data-price-max=""]</option><option>//input[@value='138267']</option><option>//body[@id='page-catalog']/div/div/div/aside/div/div[3]/div/div[6]/div[2]/div/div/input[3]</option><option>//input[3]</option></datalist></td><td>''</td>
+</tr>
+<tr><td>setText</td><td>xpath=//input[@data-price-max=""]<datalist><option>xpath=//input[@data-price-max=""]</option><option>//input[@value='138267']</option><option>//body[@id='page-catalog']/div/div/div/aside/div/div[3]/div/div[6]/div[2]/div/div/input[3]</option><option>//input[3]</option></datalist></td><td>5000</td>
+</tr>
+<tr><td>click</td><td>//input[@value='OK']<datalist><option>//input[@value='OK']</option><option>//body[@id='page-catalog']/div/div/div/aside/div/div[3]/div/div[6]/div[2]/div/div/input[5]</option><option>//input[5]</option><option>css=input.btn-graphite</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">6_SelectCategory_smartphones</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://hotline.ua<datalist><option>http://hotline.ua</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//img[@alt='Зарядные устройства']<datalist><option>//img[@alt='Зарядные устройства']</option><option>//body[@id='page-index']/div/div/div[2]/aside/nav/ul/li[16]/div/ul/li/div/ul/li[6]/a/img</option><option>//li[16]/div/ul/li/div/ul/li[6]/a/img</option><option>css=img[alt="Зарядные устройства"]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">7_SortProductsByPriceAccending</td></tr>
+</thead>
+<tbody>
+<tr><td>click</td><td>name=sort<datalist><option>name=sort</option><option>//select[@name='sort']</option><option>//div[@id='catalog-products']/div/div/div[3]/ul/li/select</option><option>//li/select</option><option>css=select[name="sort"]</option></datalist></td><td></td>
+</tr>
+<tr><td>select</td><td>name=sort<datalist><option>name=sort</option><option>//select[@name='sort']</option><option>//div[@id='catalog-products']/div/div/div[3]/ul/li/select</option><option>//li/select</option><option>css=select[name="sort"]</option></datalist></td><td>label=возрастанию цены</td>
+</tr>
+<tr><td>click</td><td>name=sort<datalist><option>name=sort</option><option>//select[@name='sort']</option><option>//div[@id='catalog-products']/div/div/div[3]/ul/li/select</option><option>//li/select</option><option>css=select[name="sort"]</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
