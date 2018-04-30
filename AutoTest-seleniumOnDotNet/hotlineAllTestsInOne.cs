@@ -16,11 +16,6 @@ namespace Test
 
         IWebDriver driver;
 
-        // open google
-        // TODO: open hotline via google
-        // private string textToSearch = "Hotline";
-
-
         [OneTimeSetUp]
         public void startTest() // This method will be fired at the start of the test
         {
@@ -33,7 +28,7 @@ namespace Test
         [OneTimeTearDown]
         public void endTest() // This method will be fired at the end of the test
         {
-         // driver.Quit();
+            driver.Quit();
         }
 
         [Test]
@@ -63,35 +58,52 @@ namespace Test
             // Navigate to hotline.ua from google search results page
             driver.FindElement(By.XPath("//a[text()[contains(.,\"Hotline - сравнить цены в интернет-магазинах Украины\")]]")).Click();
 
-            // Check URL
+            // Check URL is correct
             Assert.AreEqual(driver.Url, hotlineURL);
-
+            
 
 
 
             // [Test] 
             //
-            // As a user I want to switch from russian to ukrainian
+            // As a user I want to switch from Russian to Ukrainian then observe the home page in Ukrainian
 
             //change lang to UA
             IWebElement langUA = driver.FindElement(By.XPath("//*[@data-language=\"uk\"]"));
             langUA.Click();
+            //var languageClass = langUA.GetAttribute("className");
+            //var activeLanguage = driver.FindElement(By.XPath("//span[className()[contains(.,\"active\")]]"));
+            //Assert.AreSame(languageClass,activeLanguage);
 
 
 
+            // [Test] 
+            //
+            // As a user I want to navigate to electric guitars section then observe products
 
+            // Switch back to Russian
             IWebElement langRU = driver.FindElement(By.XPath("//*[@data-language=\"ru\"]"));
             langRU.Click();
           
-            //select electro-guitars 
+            // Navigate to electric guitars sub-catalog
             driver.FindElement(By.XPath("//a[text()=\"Музыкальные инструменты\"]")).Click();
             driver.FindElement(By.XPath("//a[@data-eventlabel=\"Электрогитары\"]")).Click();
 
-            //filter 6-strings guitars
+            // Check if sub-catalog is correct
+            Assert.IsTrue(driver.Title.Contains("Электрогитары"));
+
+
+
+            // [Test] 
+            //
+            // As a user I want to aply filter to observe 6-strings electric guitars with the price below 5000 UAH
+
+
+            // Filter 6-strings guitars
             driver.FindElement(By.XPath("//a[@href=\"/musical_instruments/elektrogitary/30957/\"]")).Click();
            
 
-            //filter by max price=5000
+            // Filter by max price=5000
             IWebElement maxPrice = driver.FindElement(By.XPath("//input[@data-price-max=\"\"]"));
             maxPrice.Click();
             maxPrice.SendKeys(Keys.Control + "a");
@@ -106,7 +118,7 @@ namespace Test
         // TEST if this works:
         // 1. new Actions(driver).pause(1000).perform();
         //
-        // From: https://testerslittlehelper.wordpress.com/2016/07/10/real-xpath/
+        // XPATH From: https://testerslittlehelper.wordpress.com/2016/07/10/real-xpath/
         // 2. XPATH: //div[@class=’buttons’ and contains(text(),’Save’)] 
         // 3. XPATH: //div[contains(@class,’intercomBtn’)]
         // 4. XPATH: //div[@class=’buttons’ and starts-with(text(),’Save’)]
