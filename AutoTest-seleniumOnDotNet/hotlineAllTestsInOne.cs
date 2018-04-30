@@ -32,6 +32,8 @@ namespace Test
         }
 
         [Test]
+        //TODO: split test by atoms, data, locators and methods
+
         public void allTestsInOne()
         {
             hotlineURL = "https://hotline.ua/";
@@ -67,14 +69,16 @@ namespace Test
             // [Test] 
             //
             // As a user I want to switch from Russian to Ukrainian then observe the home page in Ukrainian
+            // TODO: Develop assert
 
             //change lang to UA
             IWebElement langUA = driver.FindElement(By.XPath("//*[@data-language=\"uk\"]"));
             langUA.Click();
+            
             //var languageClass = langUA.GetAttribute("className");
             //var activeLanguage = driver.FindElement(By.XPath("//span[className()[contains(.,\"active\")]]"));
             //Assert.AreSame(languageClass,activeLanguage);
-
+           
 
 
             // [Test] 
@@ -97,7 +101,7 @@ namespace Test
             // [Test] 
             //
             // As a user I want to aply filter to observe 6-strings electric guitars with the price below 5000 UAH
-
+            // TODO: Develop assert
 
             // Filter 6-strings guitars
             driver.FindElement(By.XPath("//a[@href=\"/musical_instruments/elektrogitary/30957/\"]")).Click();
@@ -113,6 +117,16 @@ namespace Test
             driver.FindElement(By.XPath("//input[@value='OK']")).Click();
 
         }
+
+       
+        // TODO: Add test cases about mobile phones from __OUTPUTKatalon/hotline_TestSuite_v5.html
+
+
+
+
+
+
+
 
 
         // TEST if this works:
